@@ -48,7 +48,8 @@ const values = {
     }
     console.log(colors)
     return colors
-  }
+  },
+  submit: new RGB(0,255,0)
 }
 // This creats a stylesheet
 const styles = StyleSheet.create({
