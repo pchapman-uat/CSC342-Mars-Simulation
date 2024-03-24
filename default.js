@@ -3,6 +3,14 @@ import {styles} from './styles'
 
 import { Audio } from 'expo-av'
 
+function intBetween(min, max){
+  const arr = [];
+
+  for (let i = min; i <= max; i++) {
+    arr.push(i);
+  }
+}
+
 // This is the header function, that has the default information for all pages
 function header(){
   return(
@@ -47,4 +55,4 @@ async function playAudio(volume, file) {
   }
 }
 
-export { footer, header, playAudio }
+export { footer, header, playAudio, intBetween }
