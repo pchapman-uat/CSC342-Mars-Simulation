@@ -1,4 +1,4 @@
-import { Text, View, Image } from 'react-native';
+import { Text, View, Image, Alert } from 'react-native';
 import {styles} from './styles'
 
 import { Audio } from 'expo-av'
@@ -9,6 +9,7 @@ function intBetween(min, max){
   for (let i = min; i <= max; i++) {
     arr.push(i);
   }
+  return arr
 }
 
 // This is the header function, that has the default information for all pages
@@ -55,4 +56,21 @@ async function playAudio(volume, file) {
   }
 }
 
-export { footer, header, playAudio, intBetween }
+const AsyncAlert = async (title, message) => new Promise((resolve) => {
+  Alert.alert(
+    title,
+    message,
+    [
+      {
+        text: 'ok',
+        onPress: () => {
+          resolve('YES');
+        },
+      },
+    ],
+    { cancelable: false },
+  );
+});
+
+
+export { footer, header, playAudio, intBetween, AsyncAlert }

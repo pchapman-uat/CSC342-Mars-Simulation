@@ -5,7 +5,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 import SelectDropdown from "react-native-select-dropdown"
 
 import { styles, values, RGBA } from '../styles';
-import { footer, playAudio, intBetween } from '../default';
+import { footer, playAudio, intBetween, AsyncAlert } from '../default';
 
 // This is a class for the user, it stores the use's first and last name, as well as their age
 // It also containes a methods to welcome the user
@@ -49,7 +49,9 @@ function SecondScreen({ navigation }) {
         // Create a new user
         let user = new User(firstName, lastName, userAge)
         // Display the user welcome
-        alert(user.welcome())
+        await AsyncAlert("Test", "test")
+
+        navigation.navigate('')
       // Else play the wrong sound
       } else playAudio(0.02, require('../assets/audio/wrong.mp3'))
     };
