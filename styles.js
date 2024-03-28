@@ -44,7 +44,7 @@ const values = {
   bgArr: function(){
     let colors = []
     for (let [ key, value ]  of Object.entries(this.bg)) {
-      colors.push(value.line)
+      colors.push(value.line())
     }
     console.log(colors)
     return colors
