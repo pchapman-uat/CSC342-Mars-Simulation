@@ -51,7 +51,7 @@ function SecondScreen({ navigation }) {
         // Display the user welcome
         await AsyncAlert("Test", "test")
 
-        navigation.navigate('')
+        navigation.navigate('Agreement')
       // Else play the wrong sound
       } else playAudio(0.02, require('../assets/audio/wrong.mp3'))
     };

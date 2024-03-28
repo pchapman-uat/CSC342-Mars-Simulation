@@ -30,7 +30,7 @@ function App(){
   return(
      <NavigationContainer>
         {/* This sets the default page, as well as adjusts the screen options, such as changing the background color based on the values const */}
-        <Stack.Navigator initialRouteName="Agreement">
+        <Stack.Navigator initialRouteName="Home">
             {/* This is where all pages are put that are used for the application */}
             {/* headerShown is set to false so it is not shown on the home page */}
             <Stack.Screen name="Home" component={MainScreen} options={{headerShown: false}}/>
