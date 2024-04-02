@@ -15,6 +15,8 @@ function changeScreen(naviation) {
   naviation.navigate('Simulation');
 }
 
+
+
 // This is the main screen, also known as the home page
 function MainScreen({ navigation }) {
   return (

@@ -4,6 +4,10 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { styles, values } from '../styles';
 
 import { AsyncAlert } from '../default';
+import { useState } from 'react';
+
+import Config from "react-native-config";
+
 const message = `
 Mars Adventure Simulation Terms & Conditions
 
@@ -49,6 +53,7 @@ function agree(){
 }
 
 function AgreementScreen(naviation) {
+  console.log(Config.userData)
   return(
     <ScrollView style={{backgroundColor: values.bg.rawUmber.line()}}>
       <LinearGradient

@@ -7,6 +7,8 @@ import SelectDropdown from "react-native-select-dropdown"
 import { styles, values, RGBA } from '../styles';
 import { footer, playAudio, intBetween, AsyncAlert } from '../default';
 
+import Config from "react-native-config";
+
 // This is a class for the user, it stores the use's first and last name, as well as their age
 // It also containes a methods to welcome the user
 class User{
@@ -34,6 +36,8 @@ function SecondScreen({ navigation }) {
   const [ ageColor, setAgeColor] = useState(values.borderBg.line())
   // Create an array using the intBetween function
   // This return an array of intagers between the min and max value
+
+  const [user, setUser ] = useState()
   ages = intBetween(13,100)
 
   // Function to handle when the submit was pressed
@@ -48,8 +52,11 @@ function SecondScreen({ navigation }) {
         await playAudio(0.02, require('../assets/audio/correct.mp3'))
         // Create a new user
         let user = new User(firstName, lastName, userAge)
+        setUser(user)
         // Display the user welcome
-        await AsyncAlert("Test", "test")
+        await AsyncAlert("Weclome", user.welcome())
+
+        Config.userData = user
 
         navigation.navigate('Agreement')
       // Else play the wrong sound
