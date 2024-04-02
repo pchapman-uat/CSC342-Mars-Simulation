@@ -12,7 +12,24 @@ import { playAudio } from './default.js'
 
 import { values } from './styles'
 
+import {Image, View} from 'react-native'
 
+function LogoTitle() {
+  return (
+    <Image
+      style={{ width: 50, height: 50 }}
+      source={require('./assets/images/mars.png')}
+    />
+  );
+}
+
+
+function Testing() {
+  return (
+    <View>
+    </View>
+  )
+}
 
 // This is creates the stack navigator to a variable named Stack
 const Stack = createStackNavigator()
@@ -34,8 +51,8 @@ function App(){
             {/* This is where all pages are put that are used for the application */}
             {/* headerShown is set to false so it is not shown on the home page */}
             <Stack.Screen name="Home" component={MainScreen} options={{headerShown: false}}/>
-            <Stack.Screen name="Simulation" component={SecondScreen} options={{headerStyle:{backgroundColor:values.bg.rawUmber.line()}, headerTitleStyle: {color: values.fontColor.line()}}}/>
-            <Stack.Screen name="Agreement" component={AgreementScreen}/>
+            <Stack.Screen name="Simulation" component={SecondScreen} options={{headerStyle:{backgroundColor:values.bg.rawUmber.line()}, headerTitleStyle: {color: values.fontColor.line()}, headerTitle: (props) => <LogoTitle {...props}/>}}/>
+            <Stack.Screen name="Agreement" component={AgreementScreen} options={{ headerTitle: (props) => <LogoTitle {...props} /> }, {header: (props) => <Testing {...props}/>}}/>
         </Stack.Navigator>
     </NavigationContainer>
   )
