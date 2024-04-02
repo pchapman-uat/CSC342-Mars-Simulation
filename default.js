@@ -73,4 +73,14 @@ const AsyncAlert = async (title, message) => new Promise((resolve) => {
 });
 
 
-export { footer, header, playAudio, intBetween, AsyncAlert }
+class User{
+  constructor(firstName, lastName, age){
+    this.firstName = firstName
+    this.lastName = lastName
+    this.age = age
+  }
+  welcome() {
+    return `Welcome ${this.firstName} ${this.lastName}! (age: ${this.age}) The simulation will begin soon!`
+  }
+}
+export { footer, header, playAudio, intBetween, AsyncAlert, User }

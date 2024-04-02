@@ -4,9 +4,11 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { styles, values } from '../styles';
 
 import { AsyncAlert } from '../default';
-import { useState } from 'react';
 
 import Config from "react-native-config";
+
+import { User } from '../default';
+import { useState } from 'react';
 
 const message = `
 Mars Adventure Simulation Terms & Conditions
@@ -52,14 +54,48 @@ function agree(){
   AsyncAlert("Confirmed", "Thank you for agreeing")
 }
 
-function AgreementScreen(naviation) {
+function AgreementScreen({navigation}) {
+ 
+  const [refresh, setRefresh ] = useState(true)
+
+  const [retrunText, setReturnText ] = useState('Change Information')
+
+  const [refreshColor, setRefreshColor ] = useState('rgb(255,0,0)')
+  function handleReturn(){
+    if(refresh) {
+      setRefresh(false)
+      setReturnText("Update Information")
+      setRefreshColor('rgb(0,0,255)')
+      navigation.navigate("Simulation");
+    }
+    else {
+      setRefresh(true)
+      setRefreshColor('rgb(255,0,0)')
+      setReturnText("Change Information")
+      setUserData(Config.userData)
+    }
+
+  }
   console.log(Config.userData)
+  if(!Config.userData) Config.userData = new User("Preston", "Chapman", 20)
+  const [ userData, setUserData ] = useState(Config.userData)
+  console.log(userData)
   return(
     <ScrollView style={{backgroundColor: values.bg.rawUmber.line()}}>
       <LinearGradient
       style={[styles.information, styles.content]}
       // Set the colors for the background using an array
       colors={values.bgArr()}>
+        <View style={styles.border}>
+          <Text style={styles.text}>{Config.userData.firstName}</Text>
+          <Text style={styles.text}>{Config.userData.lastName}</Text>
+          <Text style={styles.text}>{Config.userData.age}</Text>
+        </View>
+        <Pressable style={styles.border} onPress={() => handleReturn()}>
+          <Text style={[styles.text, {color: refreshColor}]}>
+              {retrunText}
+          </Text>
+        </Pressable>
         <View style={styles.border}>
           <Text style={agreeStyle.text}>
             {message}

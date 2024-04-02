@@ -11,16 +11,7 @@ import Config from "react-native-config";
 
 // This is a class for the user, it stores the use's first and last name, as well as their age
 // It also containes a methods to welcome the user
-class User{
-  constructor(firstName, lastName, age){
-    this.firstName = firstName
-    this.lastName = lastName
-    this.age = age
-  }
-  welcome() {
-    return `Welcome ${this.firstName} ${this.lastName}! (age: ${this.age}) The simulation will begin soon!`
-  }
-}
+import { User } from '../default'
 
 // This is the function for the second screen
 function SecondScreen({ navigation }) {
