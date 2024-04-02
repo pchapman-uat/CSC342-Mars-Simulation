@@ -81,7 +81,7 @@ function AgreementScreen({navigation}) {
   const [ userData, setUserData ] = useState(Config.userData)
   console.log(userData)
   return(
-    <ScrollView style={{backgroundColor: values.bg.rawUmber.line()}}>
+    <ScrollView style={{backgroundColor: values.bg.eerieBlack.line()}}>
       <LinearGradient
       style={[styles.information, styles.content]}
       // Set the colors for the background using an array

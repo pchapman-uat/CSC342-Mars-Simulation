@@ -52,7 +52,7 @@ function App(){
             {/* headerShown is set to false so it is not shown on the home page */}
             <Stack.Screen name="Home" component={MainScreen} options={{headerShown: false}}/>
             <Stack.Screen name="Simulation" component={SecondScreen} options={{headerStyle:{backgroundColor:values.bg.rawUmber.line()}, headerTitleStyle: {color: values.fontColor.line()}, headerTitle: (props) => <LogoTitle {...props}/>}}/>
-            <Stack.Screen name="Agreement" component={AgreementScreen}/>
+            <Stack.Screen name="Agreement" component={AgreementScreen} options={{headerStyle:{backgroundColor:values.bg.eerieBlack.line()},headerTitleStyle: {color: values.fontColor.line()}}}/>
         </Stack.Navigator>
     </NavigationContainer>
   )
