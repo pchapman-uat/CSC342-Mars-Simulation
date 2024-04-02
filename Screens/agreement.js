@@ -81,9 +81,9 @@ function AgreementScreen({navigation}) {
   const [ userData, setUserData ] = useState(Config.userData)
   console.log(userData)
   return(
-    <ScrollView style={{backgroundColor: values.bg.eerieBlack.line()}}>
+    <ScrollView style={agreeStyle.scroll}>
       <LinearGradient
-      style={[styles.information, styles.content]}
+      style={agreeStyle.container}
       // Set the colors for the background using an array
       colors={values.bgArr()}>
         <View style={styles.border}>
@@ -105,7 +105,7 @@ function AgreementScreen({navigation}) {
         style={styles.border}
         onPress={() => agree()}>
           
-          <Text style={[styles.text, { color: 'rgb(0,255,0)' }]}>
+          <Text style={agreeStyle.agreeButton}>
             Agree
           </Text>
 
@@ -120,5 +120,16 @@ export default AgreementScreen
 const agreeStyle = new StyleSheet.create({
   text: {
       color: values.fontColor.line()
-    }
+    },
+  container: [
+    styles.information, 
+    styles.content
+  ],
+  scroll:{
+    backgroundColor: values.bg.eerieBlack.line()
+  },
+  agreeButton: [
+    styles.text,
+    { color: 'rgb(0,255,0)' }
+  ]
 })
