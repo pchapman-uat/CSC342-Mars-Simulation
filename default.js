@@ -80,6 +80,8 @@ class User{
     this.firstName = firstName
     this.lastName = lastName
     this.age = age
+    this.registerDate = new Date()
+    this.modifyDate = this.registerDate
   }
   welcome() {
     return `Welcome ${this.firstName} ${this.lastName}! (age: ${this.age}) The simulation will begin soon!`
@@ -91,12 +93,28 @@ class User{
   }
   setFirstName(firstName){
     this.firstName = firstName
+    this.modifyDate = new Date()
   }
   setLastName(lastName){
     this.lastName = lastName
+    this.modifyDate = new Date()
   }
   setAge(age) {
     this.age = age
+    this.modifyDate = new Date()
+  }
+
+  registerDateString(){
+    return this.printDate(this.registerDate)
+  }
+  modifyDateString(){
+    return this.printDate(this.modifyDate)
+  }
+
+  printDate(date) {
+    let date = new Intl.DateTimeFormat('en', { year: 'numeric',  month: '2-digit',  day: '2-digit' }).format(date);
+    let time = new Intl.DateTimeFormat('en', { hour: '2-digit', minute:'2-digit'}).format(date);
+    return `${date} @ ${time}`;
   }
 }
 

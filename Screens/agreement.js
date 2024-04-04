@@ -10,7 +10,6 @@ import { Config } from '../default';
 
 import { User } from '../default';
 import { useState } from 'react';
-import { TextInput } from 'react-native-gesture-handler';
 
 const message = `
 Mars Adventure Simulation Terms & Conditions
@@ -95,6 +94,8 @@ function AgreementScreen({navigation}) {
         <View style={styles.border}>
           <Text style={styles.text}>{Config.userData.firstName} {Config.userData.lastName}</Text>
           <Text style={styles.text}>{Config.userData.age}</Text>
+          <Text style={styles.text}>Registered: {Config.userData.registerDateString()}</Text>
+          <Text style={styles.text}>Modified: {Config.userData.modifyDateString()} </Text>
         </View>
         <Pressable style={styles.border} onPress={() => handleReturn()}>
           <Text style={[styles.text, {color: refreshColor}]}>
