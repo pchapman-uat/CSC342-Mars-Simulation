@@ -3,6 +3,8 @@ import {styles} from './styles'
 
 import { Audio } from 'expo-av'
 
+import Config from 'react-native-config'
+
 function intBetween(min, max){
   const arr = [];
 
@@ -83,4 +85,9 @@ class User{
     return `Welcome ${this.firstName} ${this.lastName}! (age: ${this.age}) The simulation will begin soon!`
   }
 }
-export { footer, header, playAudio, intBetween, AsyncAlert, User }
+
+/**
+ * @typedef Config
+ * @property {User} userData 
+ */
+export { footer, header, playAudio, intBetween, AsyncAlert, User, Config }

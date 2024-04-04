@@ -5,7 +5,8 @@ import { styles, values } from '../styles';
 
 import { AsyncAlert } from '../default';
 
-import Config from "react-native-config";
+
+import { Config } from '../default';
 
 import { User } from '../default';
 import { useState } from 'react';
