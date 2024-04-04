@@ -84,6 +84,20 @@ class User{
   welcome() {
     return `Welcome ${this.firstName} ${this.lastName}! (age: ${this.age}) The simulation will begin soon!`
   }
+  updateUser(firstName, lastName, age){
+    this.setFirstName(firstName)
+    this.setLastName(lastName)
+    this.setAge(age)
+  }
+  setFirstName(firstName){
+    this.firstName = firstName
+  }
+  setLastName(lastName){
+    this.lastName = lastName
+  }
+  setAge(age) {
+    this.age = age
+  }
 }
 
 /**

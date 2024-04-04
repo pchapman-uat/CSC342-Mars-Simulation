@@ -28,7 +28,6 @@ function SecondScreen({ navigation }) {
   // Create an array using the intBetween function
   // This return an array of intagers between the min and max value
 
-  const [user, setUser ] = useState()
   ages = intBetween(13,100)
 
   // Function to handle when the submit was pressed
@@ -41,13 +40,12 @@ function SecondScreen({ navigation }) {
       if(b_first && b_last && b_age) {
         // Play the correct sound
         await playAudio(0.02, require('../assets/audio/correct.mp3'))
+        console.log(Config.userData)
         // Create a new user
-        let user = new User(firstName, lastName, userAge)
-        setUser(user)
+        if(Config.userData) Config.userData.updateUser(firstName, lastName, userAge);
+        else Config.userData = new User(firstName, lastName, userAge)
         // Display the user welcome
-        await AsyncAlert("Weclome", user.welcome())
-
-        Config.userData = user
+        await AsyncAlert("Weclome", Config.userData.welcome())
 
         navigation.navigate('Agreement')
       // Else play the wrong sound
