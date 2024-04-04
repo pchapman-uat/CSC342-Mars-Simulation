@@ -10,6 +10,7 @@ import { Config } from '../default';
 
 import { User } from '../default';
 import { useState } from 'react';
+import { TextInput } from 'react-native-gesture-handler';
 
 const message = `
 Mars Adventure Simulation Terms & Conditions
@@ -88,8 +89,11 @@ function AgreementScreen({navigation}) {
       // Set the colors for the background using an array
       colors={values.bgArr()}>
         <View style={styles.border}>
-          <Text style={styles.text}>{Config.userData.firstName}</Text>
-          <Text style={styles.text}>{Config.userData.lastName}</Text>
+          <Text style={agreeStyle.welcome}>Welcome!</Text>
+          <Text style={agreeStyle.subtitle}> Please verify your information then agree to our TOS</Text>
+        </View>
+        <View style={styles.border}>
+          <Text style={styles.text}>{Config.userData.firstName} {Config.userData.lastName}</Text>
           <Text style={styles.text}>{Config.userData.age}</Text>
         </View>
         <Pressable style={styles.border} onPress={() => handleReturn()}>
@@ -119,6 +123,20 @@ export default AgreementScreen
 
 
 const agreeStyle = new StyleSheet.create({
+  welcome: [
+    styles.text,
+    {
+      fontSize: 35,
+      fontFamily: "Jumpers3D",
+      fontWeight: "bold"
+    }
+  ],
+  subtitle: [
+    styles.text,
+    {
+      fontSize: 15
+    }
+  ],
   text: {
       color: values.fontColor.line()
     },
