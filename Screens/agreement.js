@@ -67,7 +67,7 @@ function AgreementScreen({navigation}) {
       setRefresh(false)
       setReturnText("Update Information")
       setRefreshColor('rgb(0,0,255)')
-      navigation.navigate("Simulation");
+      navigation.navigate("RegisterScreen");
     }
     else {
       setRefresh(true)

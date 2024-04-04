@@ -5,7 +5,7 @@ import { createStackNavigator } from '@react-navigation/stack'
 
 // Each screen has been made as a seperate file, it is referenced here
 import MainScreen from './Screens/mainScreen'
-import SecondScreen from './Screens/simulation'
+import RegisterScreen from './Screens/register'
 import Example from './changeValMSExample'
 import AgreementScreen from './Screens/agreement'
 import { playAudio } from './default.js'
@@ -47,11 +47,11 @@ function App(){
   return(
      <NavigationContainer>
         {/* This sets the default page, as well as adjusts the screen options, such as changing the background color based on the values const */}
-        <Stack.Navigator initialRouteName="Home">
+        <Stack.Navigator initialRouteName="Agreement">
             {/* This is where all pages are put that are used for the application */}
             {/* headerShown is set to false so it is not shown on the home page */}
             <Stack.Screen name="Home" component={MainScreen} options={{headerShown: false}}/>
-            <Stack.Screen name="Simulation" component={SecondScreen} options={{headerStyle:{backgroundColor:values.bg.rawUmber.line()}, headerTitleStyle: {color: values.fontColor.line()}, headerTitle: (props) => <LogoTitle {...props}/>}}/>
+            <Stack.Screen name="RegisterScreen" component={RegisterScreen} options={{headerStyle:{backgroundColor:values.bg.rawUmber.line()}, headerTitleStyle: {color: values.fontColor.line()}, headerTitle: (props) => <LogoTitle {...props}/>}}/>
             <Stack.Screen name="Agreement" component={AgreementScreen} options={{headerStyle:{backgroundColor:values.bg.eerieBlack.line()},headerTitleStyle: {color: values.fontColor.line()}}}/>
         </Stack.Navigator>
     </NavigationContainer>

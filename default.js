@@ -111,9 +111,9 @@ class User{
     return this.printDate(this.modifyDate)
   }
 
-  printDate(date) {
-    let date = new Intl.DateTimeFormat('en', { year: 'numeric',  month: '2-digit',  day: '2-digit' }).format(date);
-    let time = new Intl.DateTimeFormat('en', { hour: '2-digit', minute:'2-digit'}).format(date);
+  printDate(dateObj) {
+    let date = new Intl.DateTimeFormat('en', { year: 'numeric',  month: '2-digit',  day: '2-digit' }).format(dateObj);
+    let time = new Intl.DateTimeFormat('en', { hour: '2-digit', minute:'2-digit'}).format(dateObj);
     return `${date} @ ${time}`;
   }
 }
