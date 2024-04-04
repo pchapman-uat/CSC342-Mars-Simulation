@@ -12,7 +12,7 @@ import { header, footer, playAudio } from '../default';
 
 function changeScreen(naviation) {
   playAudio(0.02, require("../assets/audio/comet.mp3"));
-  naviation.navigate('Simulation');
+  naviation.navigate('Register');
 }
 
 

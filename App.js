@@ -26,13 +26,6 @@ function LogoTitle() {
 }
 
 
-function Testing() {
-  return (
-    <View>
-    </View>
-  )
-}
-
 // This is creates the stack navigator to a variable named Stack
 const Stack = createStackNavigator()
 
@@ -53,7 +46,7 @@ function App(){
             {/* This is where all pages are put that are used for the application */}
             {/* headerShown is set to false so it is not shown on the home page */}
             <Stack.Screen name="Home" component={MainScreen} options={{headerShown: false}}/>
-            <Stack.Screen name="RegisterScreen" component={RegisterScreen} options={{headerStyle:{backgroundColor:values.bg.rawUmber.line()}, headerTitleStyle: {color: values.fontColor.line()}, headerTitle: (props) => <LogoTitle {...props}/>}}/>
+            <Stack.Screen name="Register" component={RegisterScreen} options={{headerStyle:{backgroundColor:values.bg.rawUmber.line()}, headerTitleStyle: {color: values.fontColor.line()}, headerTitle: (props) => <LogoTitle {...props}/>}}/>
             <Stack.Screen name="Agreement" component={AgreementScreen} options={{headerStyle:{backgroundColor:values.bg.eerieBlack.line()},headerTitleStyle: {color: values.fontColor.line()}}}/>
             <Stack.Screen name="Simulation" component={SimulationScreen} options={{headerStyle:{backgroundColor: 'rgb(0,0,0)'}, headerTitleStyle:{color: values.fontColor.line()}}}></Stack.Screen>
         </Stack.Navigator>
