@@ -51,12 +51,14 @@ Welcome to the Mars Adventure Simulation (MAS)! Before you embark on this out-of
 Let the Martian Madness Begin!
 `
 
-function agree(){
-  AsyncAlert("Confirmed", "Thank you for agreeing")
-}
+
 
 function AgreementScreen({navigation}) {
  
+  async function agree(){
+    await AsyncAlert("Confirmed", "Thank you for agreeing")
+    navigation.navigate('Simulation')
+  }
   const [refresh, setRefresh ] = useState(true)
 
   const [retrunText, setReturnText ] = useState('Change Information')
