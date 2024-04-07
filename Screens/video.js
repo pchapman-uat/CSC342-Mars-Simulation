@@ -1,11 +1,11 @@
 import React from 'react';
-import { View, StyleSheet, Button } from 'react-native';
+import { View, StyleSheet, Button, Pressable, Text } from 'react-native';
 import { Video, ResizeMode } from 'expo-av';
 import { styles, values } from '../styles';
 import { LinearGradient } from 'expo-linear-gradient';
 
 
-export default function App() {
+export default function App({navigation}) {
   const video = React.useRef(null);
   const [status, setStatus] = React.useState({ isPlaying: 'Pause'});
   return (
@@ -30,6 +30,13 @@ export default function App() {
           />
         </View>
       </View>
+      <Pressable
+      style={styles.border}
+      onPress={() => navigation.navigate('Simulation')}>
+        <Text style={[styles.text, {color: 'rgb(0,255,0)'}]}> 
+          Start Simulation
+        </Text>
+      </Pressable>
     </LinearGradient>
   );
 }
@@ -37,6 +44,7 @@ export default function App() {
 const videoStyles = StyleSheet.create({
   content: [
     styles.content,
+    styles.information,
     {
       backgroundColor: values.bg.rawUmber.line(),
     }

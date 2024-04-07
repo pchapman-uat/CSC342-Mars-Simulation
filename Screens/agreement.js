@@ -57,7 +57,7 @@ function AgreementScreen({navigation}) {
  
   async function agree(){
     await AsyncAlert("Confirmed", "Thank you for agreeing")
-    navigation.navigate('Simulation')
+    navigation.navigate('Video')
   }
   const [refresh, setRefresh ] = useState(true)
 

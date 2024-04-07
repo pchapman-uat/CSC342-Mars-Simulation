@@ -42,14 +42,14 @@ function App(){
   return(
      <NavigationContainer>
         {/* This sets the default page, as well as adjusts the screen options, such as changing the background color based on the values const */}
-        <Stack.Navigator initialRouteName="Video">
+        <Stack.Navigator initialRouteName="Home">
             {/* This is where all pages are put that are used for the application */}
             {/* headerShown is set to false so it is not shown on the home page */}
             <Stack.Screen name="Home" component={MainScreen} options={{headerShown: false}}/>
-             <Stack.Screen name="Video" component={VideoScreen} options={{headerShown: false}}/>
             <Stack.Screen name="Register" component={RegisterScreen} options={{headerStyle:{backgroundColor:values.bg.rawUmber.line()}, headerTitleStyle: {color: values.fontColor.line()}, headerTitle: (props) => <LogoTitle {...props}/>}}/>
             <Stack.Screen name="Agreement" component={AgreementScreen} options={{headerStyle:{backgroundColor:values.bg.eerieBlack.line()},headerTitleStyle: {color: values.fontColor.line()}}}/>
             <Stack.Screen name="Simulation" component={SimulationScreen} options={{headerStyle:{backgroundColor: 'rgb(0,0,0)'}, headerTitleStyle:{color: values.fontColor.line()}}}></Stack.Screen>
+            <Stack.Screen name="Video" component={VideoScreen}  options={{headerStyle:{backgroundColor:values.bg.champagne.line()}, headerTitleStyle: {color: values.fontColor.line()}, headerTitle: (props) => <LogoTitle {...props}/>}}/>
         </Stack.Navigator>
     </NavigationContainer>
   )
