@@ -128,6 +128,16 @@ import {
           top: '42.5%',
         },
       ],
+      sun: [
+        simStyle.planet,
+        {
+          height: "160%",
+          top: "-28%",
+          left: "-83%",
+          width: "100%",
+          borderRadius: "600%"
+        }
+      ]
     });
     const planets = {
         mercury: {
@@ -165,6 +175,10 @@ import {
         pluto: {
             description: "Classified as a dwarf planet, Pluto is located in the Kuiper Belt. It's composed of ice and rock and has a thin atmosphere. Pluto has five known moons, with its largest moon, Charon, being particularly notable for its size relative to Pluto.",
             color: new RGB(180, 169, 169)
+        },
+        sun: {
+            description: "The Sun is a luminous sphere of hot plasma at the center of our solar system, primarily composed of hydrogen and helium. It provides the light, heat, and energy necessary for life on Earth through the process of nuclear fusion.",
+            color: new RGB(255, 255, 0)
         }
       };
 
@@ -187,6 +201,7 @@ import {
                 <ImageBackground
                 style={{ width: 2000 }}
                 source={require('../assets/images/test.png')}>
+                <Pressable style={planetStyles.sun} onPress={() => handlePressinfo("sun")}></Pressable>
                 <Pressable style={planetStyles.mercury} onPress={() => handlePressinfo("mercury")}></Pressable>
                 <Pressable style={planetStyles.venus} onPress={() => handlePressinfo("venus")}></Pressable>
                 <Pressable style={planetStyles.earth} onPress={() => handlePressinfo("earth")}></Pressable>
