@@ -15,6 +15,19 @@ import {
         backgroundColor: new RGBA(255, 255, 255, 0.5).line(),
         borderRadius: "25px"
       },
+      overlay: {
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        justifyContent: 'center',
+        alignItems: 'center',
+        zIndex: 2, // Ensure the overlay view stays on top
+      },
+      container: {
+          flex: 1
+      }
     });
     const planetStyles = new StyleSheet.create({
       mercury: [
@@ -142,23 +155,29 @@ import {
         console.log(planets[key].description)
     }
     return (
-      <ScrollView
-        horizontal={true}
-        style={{ backgroundColor: new RGB(0, 0, 0).line(), flex }}>
-        <ImageBackground
-          style={{ width: 2000 }}
-          source={require('../assets/images/test.png')}>
-        <Pressable style={planetStyles.mercury} onPress={() => handlePressinfo("mercury")}></Pressable>
-        <Pressable style={planetStyles.venus} onPress={() => handlePressinfo("venus")}></Pressable>
-        <Pressable style={planetStyles.earth} onPress={() => handlePressinfo("earth")}></Pressable>
-        <Pressable style={planetStyles.mars} onPress={() => handlePressinfo("mars")}></Pressable>
-        <Pressable style={planetStyles.jupiter} onPress={() => handlePressinfo("jupiter")}></Pressable>
-        <Pressable style={planetStyles.saturn} onPress={() => handlePressinfo("saturn")}></Pressable>
-        <Pressable style={planetStyles.uranus} onPress={() => handlePressinfo("uranus")}></Pressable>
-        <Pressable style={planetStyles.neptune} onPress={() => handlePressinfo("neptune")}></Pressable>
-        <Pressable style={planetStyles.pluto} onPress={() => handlePressinfo("pluto")}></Pressable>
-        </ImageBackground>
-      </ScrollView>
+        <View style={simStyle.container}>
+            <ScrollView
+                horizontal={true}
+                style={{ backgroundColor: new RGB(0, 0, 0).line()}}>
+                <ImageBackground
+                style={{ width: 2000 }}
+                source={require('../assets/images/test.png')}>
+                <Pressable style={planetStyles.mercury} onPress={() => handlePressinfo("mercury")}></Pressable>
+                <Pressable style={planetStyles.venus} onPress={() => handlePressinfo("venus")}></Pressable>
+                <Pressable style={planetStyles.earth} onPress={() => handlePressinfo("earth")}></Pressable>
+                <Pressable style={planetStyles.mars} onPress={() => handlePressinfo("mars")}></Pressable>
+                <Pressable style={planetStyles.jupiter} onPress={() => handlePressinfo("jupiter")}></Pressable>
+                <Pressable style={planetStyles.saturn} onPress={() => handlePressinfo("saturn")}></Pressable>
+                <Pressable style={planetStyles.uranus} onPress={() => handlePressinfo("uranus")}></Pressable>
+                <Pressable style={planetStyles.neptune} onPress={() => handlePressinfo("neptune")}></Pressable>
+                <Pressable style={planetStyles.pluto} onPress={() => handlePressinfo("pluto")}></Pressable>
+                </ImageBackground>
+            </ScrollView>
+            <View style={styles.overlay}>
+             {planets.mars.description}
+            </View>
+        </View>
+
     );
   }
   
