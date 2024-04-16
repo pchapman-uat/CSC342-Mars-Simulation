@@ -11,6 +11,7 @@ import {
     const simStyle = StyleSheet.create({
       planet: {
         backgroundColor: new RGBA(255, 255, 255, 0.5).line(),
+        borderRadius: "25px"
       },
     });
     const planetStyles = new StyleSheet.create({
