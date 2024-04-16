@@ -20,10 +20,15 @@ import {
         top: 0,
         left: 0,
         right: 0,
-        bottom: 0,
+        backgroundColor: new RGBA(255,255,255,0.7).line(),
+        margin: 10,
+        borderRadius: "20px",
         justifyContent: 'center',
         alignItems: 'center',
         zIndex: 2, // Ensure the overlay view stays on top
+      },
+      infoText:{
+        padding: 10
       },
       container: {
           flex: 1
@@ -173,8 +178,10 @@ import {
                 <Pressable style={planetStyles.pluto} onPress={() => handlePressinfo("pluto")}></Pressable>
                 </ImageBackground>
             </ScrollView>
-            <View style={styles.overlay}>
-             {planets.mars.description}
+            <View style={simStyle.overlay}>
+                <Text style={simStyle.infoText}>
+                    {planets.mars.description}
+                </Text>
             </View>
         </View>
 
