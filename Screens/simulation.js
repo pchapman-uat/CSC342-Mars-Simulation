@@ -4,6 +4,8 @@ import {
     ImageBackground,
     StyleSheet,
     View,
+    Pressable,
+    Dimensions,
   } from 'react-native';
   import { RGB, RGBA, styles, values } from '../styles';
   function SimulationScreen({ navigation }) {
@@ -106,22 +108,55 @@ import {
         },
       ],
     });
+    const planets = {
+        mercury: {
+          description: "The smallest planet, closest to the Sun. It has a rocky surface and extreme temperature variations."
+        },
+        venus: {
+          description: "Similar in size to Earth, it's known for its thick, toxic atmosphere and intense greenhouse effect, making it the hottest planet in our solar system."
+        },
+        earth: {
+          description: "Our home planet, with a diverse environment that supports life as we know it. It has a unique combination of land, water, and atmosphere."
+        },
+        mars: {
+          description: "Often called the 'Red Planet' due to its rusty color. It has polar ice caps, canyons, and extinct volcanoes, and it's a focus of exploration for its potential to harbor life."
+        },
+        jupiter: {
+          description: "The largest planet, known for its massive size and iconic swirling bands of gas. It has a dynamic atmosphere and a large number of moons, including the four Galilean moons."
+        },
+        saturn: {
+          description: "Known for its spectacular ring system, Saturn is the second-largest planet. It's mostly composed of hydrogen and helium gas, with a rocky core."
+        },
+        uranus: {
+          description: "An ice giant with a unique feature: it rotates on its side. Uranus has a faint ring system and a blue-green color due to the presence of methane in its atmosphere."
+        },
+        neptune: {
+          description: "Similar in composition to Uranus, Neptune is the farthest planet from the Sun. It has strong winds and a striking blue coloration, with faint rings and a large moon, Triton."
+        },
+        pluto: {
+          description: "Classified as a dwarf planet, Pluto is located in the Kuiper Belt. It's composed of ice and rock and has a thin atmosphere. Pluto has five known moons, with its largest moon, Charon, being particularly notable for its size relative to Pluto."
+        }
+      };
+
+    function handlePressinfo(key){
+        console.log(planets[key].description)
+    }
     return (
       <ScrollView
         horizontal={true}
-        style={{ backgroundColor: new RGB(0, 0, 0).line() }}>
+        style={{ backgroundColor: new RGB(0, 0, 0).line(), flex }}>
         <ImageBackground
           style={{ width: 2000 }}
           source={require('../assets/images/test.png')}>
-          <View style={planetStyles.mercury}></View>
-          <View style={planetStyles.venus}></View>
-          <View style={planetStyles.earth}></View>
-          <View style={planetStyles.mars}></View>
-          <View style={planetStyles.jupiter}></View>
-          <View style={planetStyles.saturn}></View>
-          <View style={planetStyles.uranus}></View>
-          <View style={planetStyles.neptune}></View>
-          <View style={planetStyles.pluto}></View>
+        <Pressable style={planetStyles.mercury} onPress={() => handlePressinfo("mercury")}></Pressable>
+        <Pressable style={planetStyles.venus} onPress={() => handlePressinfo("venus")}></Pressable>
+        <Pressable style={planetStyles.earth} onPress={() => handlePressinfo("earth")}></Pressable>
+        <Pressable style={planetStyles.mars} onPress={() => handlePressinfo("mars")}></Pressable>
+        <Pressable style={planetStyles.jupiter} onPress={() => handlePressinfo("jupiter")}></Pressable>
+        <Pressable style={planetStyles.saturn} onPress={() => handlePressinfo("saturn")}></Pressable>
+        <Pressable style={planetStyles.uranus} onPress={() => handlePressinfo("uranus")}></Pressable>
+        <Pressable style={planetStyles.neptune} onPress={() => handlePressinfo("neptune")}></Pressable>
+        <Pressable style={planetStyles.pluto} onPress={() => handlePressinfo("pluto")}></Pressable>
         </ImageBackground>
       </ScrollView>
     );
