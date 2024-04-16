@@ -164,7 +164,7 @@ import {
         },
         pluto: {
             description: "Classified as a dwarf planet, Pluto is located in the Kuiper Belt. It's composed of ice and rock and has a thin atmosphere. Pluto has five known moons, with its largest moon, Charon, being particularly notable for its size relative to Pluto.",
-            color: RGB(180, 169, 169)
+            color: new RGB(180, 169, 169)
         }
       };
 
