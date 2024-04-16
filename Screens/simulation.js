@@ -102,7 +102,7 @@ import {
           width: 50,
           position: 'absolute',
           left: '94.5%',
-          top: '43%',
+          top: '42.5%',
         },
       ],
     });
