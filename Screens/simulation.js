@@ -16,7 +16,8 @@ import {
     const simStyle = StyleSheet.create({
       planet: {
         backgroundColor: new RGBA(255, 255, 255, 0.5).line(),
-        borderRadius: "25px"
+        borderRadius: "25px",
+        position: 'absolute',
       },
       overlay: {
         position: 'absolute',
@@ -35,7 +36,11 @@ import {
       },
       container: {
           flex: 1
-      }
+      },
+      imgBg: { 
+          width: 2000,
+          display: 'flex'
+        }
     });
     const planetStyles = new StyleSheet.create({
       mercury: [
@@ -43,9 +48,8 @@ import {
         {
           height: 50,
           width: 50,
-          position: 'absolute',
           left: '18.1%',
-          top: '50.5%',
+          top: (Dimensions.get('screen').height - 100) / 2
         },
       ],
       venus: [
@@ -53,7 +57,6 @@ import {
         {
           height: 180,
           width: 180,
-          position: 'absolute',
           left: '20.8%',
           top: '39%',
         },
@@ -63,7 +66,6 @@ import {
         {
           height: 180,
           width: 180,
-          position: 'absolute',
           left: '30%',
           top: '39%',
         },
@@ -73,7 +75,6 @@ import {
         {
           height: 80,
           width: 80,
-          position: 'absolute',
           left: '39.5%',
           top: '48%',
         },
@@ -83,7 +84,6 @@ import {
         {
           height: 250,
           width: 250,
-          position: 'absolute',
           left: '43.7%',
           top: '34.5%',
         },
@@ -93,7 +93,6 @@ import {
         {
           height: 260,
           width: 375,
-          position: 'absolute',
           left: '56.8%',
           top: '30%',
         },
@@ -103,7 +102,6 @@ import {
         {
           height: 170,
           width: 170,
-          position: 'absolute',
           left: '75.8%',
           top: '33.5%',
         },
@@ -113,7 +111,6 @@ import {
         {
           height: 170,
           width: 170,
-          position: 'absolute',
           left: '85.1%',
           top: '33.5%',
         },
@@ -123,7 +120,6 @@ import {
         {
           height: 50,
           width: 50,
-          position: 'absolute',
           left: '94.5%',
           top: '42.5%',
         },
@@ -199,7 +195,7 @@ import {
                 horizontal={true}
                 style={{ backgroundColor: new RGB(0, 0, 0).line()}}>
                 <ImageBackground
-                style={{ width: 2000 }}
+                style={simStyle.imgBg}
                 source={require('../assets/images/test.png')}>
                 <Pressable style={planetStyles.sun} onPress={() => handlePressinfo("sun")}></Pressable>
                 <Pressable style={planetStyles.mercury} onPress={() => handlePressinfo("mercury")}></Pressable>
