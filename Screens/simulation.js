@@ -48,8 +48,7 @@ import {
         {
           height: 50,
           width: 50,
-          left: '18.1%',
-          top: (Dimensions.get('screen').height - 100) / 2
+          left: '18.1%'
         },
       ],
       venus: [
@@ -58,7 +57,6 @@ import {
           height: 180,
           width: 180,
           left: '20.8%',
-          top: '39%',
         },
       ],
       earth: [
@@ -67,7 +65,6 @@ import {
           height: 180,
           width: 180,
           left: '30%',
-          top: '39%',
         },
       ],
       mars: [
@@ -76,7 +73,6 @@ import {
           height: 80,
           width: 80,
           left: '39.5%',
-          top: '48%',
         },
       ],
       jupiter: [
@@ -85,7 +81,6 @@ import {
           height: 250,
           width: 250,
           left: '43.7%',
-          top: '34.5%',
         },
       ],
       saturn: [
@@ -94,7 +89,6 @@ import {
           height: 260,
           width: 375,
           left: '56.8%',
-          top: '30%',
         },
       ],
       uranus: [
@@ -103,7 +97,6 @@ import {
           height: 170,
           width: 170,
           left: '75.8%',
-          top: '33.5%',
         },
       ],
       neptune: [
@@ -112,7 +105,6 @@ import {
           height: 170,
           width: 170,
           left: '85.1%',
-          top: '33.5%',
         },
       ],
       pluto: [
@@ -121,19 +113,30 @@ import {
           height: 50,
           width: 50,
           left: '94.5%',
-          top: '42.5%',
+
         },
       ],
       sun: [
         simStyle.planet,
         {
-          height: "160%",
-          top: "-28%",
-          left: "-83%",
-          width: "100%",
-          borderRadius: "600%"
+          height: Dimensions.get('screen').height -60,
+          width: 430,
+          left: '-5%',
+          borderRadius: "100%",
         }
-      ]
+      ],
+      container: {
+        justifyContent: 'center',
+        marginTop: "2.3%",
+        flex: 1
+      },
+      offset1: {
+        marginBottom: '12.3%'
+      },
+      offset2: {
+        height: "100px",
+        marginTop: "-9.8%"
+      },
     });
     const planets = {
         mercury: {
@@ -198,15 +201,24 @@ import {
                 style={simStyle.imgBg}
                 source={require('../assets/images/test.png')}>
                 <Pressable style={planetStyles.sun} onPress={() => handlePressinfo("sun")}></Pressable>
-                <Pressable style={planetStyles.mercury} onPress={() => handlePressinfo("mercury")}></Pressable>
-                <Pressable style={planetStyles.venus} onPress={() => handlePressinfo("venus")}></Pressable>
-                <Pressable style={planetStyles.earth} onPress={() => handlePressinfo("earth")}></Pressable>
-                <Pressable style={planetStyles.mars} onPress={() => handlePressinfo("mars")}></Pressable>
-                <Pressable style={planetStyles.jupiter} onPress={() => handlePressinfo("jupiter")}></Pressable>
-                <Pressable style={planetStyles.saturn} onPress={() => handlePressinfo("saturn")}></Pressable>
-                <Pressable style={planetStyles.uranus} onPress={() => handlePressinfo("uranus")}></Pressable>
-                <Pressable style={planetStyles.neptune} onPress={() => handlePressinfo("neptune")}></Pressable>
-                <Pressable style={planetStyles.pluto} onPress={() => handlePressinfo("pluto")}></Pressable>
+                <View style={planetStyles.container}> 
+                  <Pressable style={planetStyles.mercury} onPress={() => handlePressinfo("mercury")}></Pressable>
+                  <Pressable style={planetStyles.venus} onPress={() => handlePressinfo("venus")}></Pressable>
+                  <Pressable style={planetStyles.earth} onPress={() => handlePressinfo("earth")}></Pressable>
+                  <Pressable style={planetStyles.mars} onPress={() => handlePressinfo("mars")}></Pressable>
+                  <Pressable style={planetStyles.jupiter} onPress={() => handlePressinfo("jupiter")}></Pressable>
+                  <Pressable style={planetStyles.saturn} onPress={() => handlePressinfo("saturn")}></Pressable>
+                  <View style={planetStyles.offset1}>
+                    <Pressable style={planetStyles.uranus} onPress={() => handlePressinfo("uranus")}></Pressable>
+                    <Pressable style={planetStyles.neptune} onPress={() => handlePressinfo("neptune")}></Pressable>
+                  </View>
+                  <View style={planetStyles.test}>
+                    <View style={planetStyles.offset2}> 
+                      <Pressable style={planetStyles.pluto} onPress={() => handlePressinfo("pluto")}></Pressable>
+                    </View>   
+                  </View>
+                </View>
+
                 </ImageBackground>
             </ScrollView>
             <View style={simStyle.overlay}>

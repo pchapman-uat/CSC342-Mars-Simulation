@@ -6,7 +6,6 @@ import { createStackNavigator } from '@react-navigation/stack'
 // Each screen has been made as a seperate file, it is referenced here
 import MainScreen from './Screens/mainScreen'
 import RegisterScreen from './Screens/register'
-import Example from './changeValMSExample'
 import AgreementScreen from './Screens/agreement'
 import SimulationScreen from './Screens/simulation';
 import VideoScreen from './Screens/video'
@@ -42,7 +41,7 @@ function App(){
   return(
      <NavigationContainer>
         {/* This sets the default page, as well as adjusts the screen options, such as changing the background color based on the values const */}
-        <Stack.Navigator initialRouteName="Home">
+        <Stack.Navigator initialRouteName="Simulation">
             {/* This is where all pages are put that are used for the application */}
             {/* headerShown is set to false so it is not shown on the home page */}
             <Stack.Screen name="Home" component={MainScreen} options={{headerShown: false}}/>
