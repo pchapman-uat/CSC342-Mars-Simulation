@@ -123,6 +123,7 @@ import {
           width: 430,
           left: '-5%',
           borderRadius: "100%",
+          zIndex: 4
         }
       ],
       container: {
@@ -135,7 +136,7 @@ import {
       },
       offset2: {
         height: "100px",
-        marginTop: "-9.8%"
+        marginTop: "-9.7%"
       },
     });
     const planets = {
@@ -200,8 +201,9 @@ import {
                 <ImageBackground
                 style={simStyle.imgBg}
                 source={require('../assets/images/test.png')}>
-                <Pressable style={planetStyles.sun} onPress={() => handlePressinfo("sun")}></Pressable>
+                <Pressable style={planetStyles.sun} onPress={() => handlePressinfo("sun")}></Pressable>  
                 <View style={planetStyles.container}> 
+                  
                   <Pressable style={planetStyles.mercury} onPress={() => handlePressinfo("mercury")}></Pressable>
                   <Pressable style={planetStyles.venus} onPress={() => handlePressinfo("venus")}></Pressable>
                   <Pressable style={planetStyles.earth} onPress={() => handlePressinfo("earth")}></Pressable>
