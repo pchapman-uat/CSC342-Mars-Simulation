@@ -6,9 +6,8 @@ import {
     StyleSheet,
     View,
     Pressable,
-    Dimensions,
   } from 'react-native';
-  import { RGB, RGBA, styles, values } from '../styles';
+  import { RGB, RGBA } from '../styles';
   function SimulationScreen({ navigation }) {
     const [infoColor, setInfoColor] = useState(new RGBA(0,0,0,0))
     const [info, setInfo ] = useState("")
