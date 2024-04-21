@@ -119,10 +119,10 @@ import {
       sun: [
         simStyle.planet,
         {
-          height: Dimensions.get('screen').height -60,
+          height: "100%",
           width: 430,
           left: '-5%',
-          borderRadius: "100%",
+          borderRadius: "40%",
           zIndex: 4
         }
       ],
