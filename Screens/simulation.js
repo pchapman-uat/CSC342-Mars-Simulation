@@ -8,6 +8,7 @@ import {
     Pressable,
   } from 'react-native';
   import { RGB, RGBA } from '../styles';
+import { playAudio } from '../default';
   function SimulationScreen({ navigation }) {
     const [infoColor, setInfoColor] = useState(new RGBA(0,0,0,0))
     const [info, setInfo ] = useState("")
@@ -182,6 +183,7 @@ import {
       };
 
     function handlePressinfo(key){
+        playAudio(0.2, require('../assets/audio/select.wav'))
         console.log(`Diplaying ${key}`)
         let currentInfo = planets[key]
         setInfoColor(currentInfo.color)
